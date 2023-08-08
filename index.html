@@ -2,20 +2,72 @@
 <html>
 <head>
   <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+    
+    .calculator {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #0056b3;
+    }
+    
+    h3 {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <label for="num1">Number 1:</label>
-  <input type="number" id="num1">
+  <div class="calculator">
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1">
 
-  <label for="num2">Number 2:</label>
-  <input type="number" id="num2">
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2">
 
-  <button onclick="add()">Add</button>
-  <button onclick="subtract()">Subtract</button>
-  <button onclick="multiply()">Multiply</button>
-  <button onclick="divide()">Divide</button>
+    <button onclick="add()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
 
-  <h3>Result: <span id="result"></span></h3>
+    <h3>Result: <span id="result"></span></h3>
+  </div>
 
   <script>
     function add() {
@@ -24,7 +76,7 @@
       const result = num1 + num2;
       document.getElementById("result").textContent = result;
     }
-    
+
     function subtract() {
       const num1 = parseFloat(document.getElementById("num1").value);
       const num2 = parseFloat(document.getElementById("num2").value);
